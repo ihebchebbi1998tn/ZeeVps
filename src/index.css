@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 225 15% 8%;
+    --foreground: 220 12% 88%;
+
+    --card: 225 14% 11%;
+    --card-foreground: 220 12% 88%;
+
+    --popover: 225 14% 11%;
+    --popover-foreground: 220 12% 88%;
+
+    --primary: 215 60% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 225 12% 15%;
+    --secondary-foreground: 220 10% 70%;
+
+    --muted: 225 12% 14%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 225 12% 18%;
+    --accent-foreground: 220 12% 88%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 75% 50%;
+    --warning-foreground: 225 15% 8%;
+
+    --success: 152 45% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 225 10% 16%;
+    --input: 225 12% 16%;
+    --ring: 215 60% 52%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 225 16% 7%;
+    --sidebar-foreground: 220 8% 52%;
+    --sidebar-primary: 215 60% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 12% 13%;
+    --sidebar-accent-foreground: 220 12% 88%;
+    --sidebar-border: 225 10% 13%;
+    --sidebar-ring: 215 60% 52%;
+
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-size: 13px;
+  }
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .terminal-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .terminal-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .terminal-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(225 10% 22%);
+    border-radius: 4px;
+  }
+  .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(225 10% 28%);
+  }
+
+  /* Smooth card glass effect */
+  .glass-card {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+
+  /* Subtle glow for primary elements */
+  .glow-primary {
+    box-shadow: 0 0 20px -6px hsl(var(--primary) / 0.25);
+  }
+}
